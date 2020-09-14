@@ -1,10 +1,13 @@
 package com.example.unitconverter
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,10 +19,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ButtonsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ButtonsFragment : Fragment() {
+class ButtonsFragment : Fragment(), View.OnClickListener  {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private val mListener: OnFragmentInteractionListener? = null
+
+    interface OnFragmentInteractionListener {
+        fun onFragmentInteraction(link: String?)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +38,14 @@ class ButtonsFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buttons, container, false)
+        val view: View =  inflater.inflate(R.layout.fragment_buttons, container, false)
+        val btn: Button = view.findViewById(R.id.button2)
+        btn.setOnClickListener(this)
+        return view
     }
 
     companion object {
@@ -56,4 +67,17 @@ class ButtonsFragment : Fragment() {
                 }
             }
     }
+
+    override fun onClick(v: View?) {
+        val textF: TextView? = view?.findViewById(R.id.fromLabel)
+        when (v?.id) {
+            R.id.button2 -> {
+                mListener?.onFragmentInteraction("1");
+            }
+            else -> {
+                Log.println(Log.INFO, "qwe", "else")
+            }
+        }
+    }
+
 }
