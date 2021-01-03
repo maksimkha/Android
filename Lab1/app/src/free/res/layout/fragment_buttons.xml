@@ -23,8 +23,7 @@
         android:gravity="center"
         android:text="@string/symbol_1"
         grid:layout_row="0"
-        grid:layout_column="0"
-        android:onClick="onNumberClick"/>
+        grid:layout_column="0"/>
 
     <Button
         android:id="@+id/button3"
@@ -34,8 +33,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_2"
-        android:onClick="onNumberClick"/>
+        android:text="@string/symbol_2"/>
 
     <Button
         android:id="@+id/button4"
@@ -45,8 +43,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_3"
-        android:onClick="onNumberClick"/>
+        android:text="@string/symbol_3"/>
 
     <Button
         android:id="@+id/button5"
@@ -56,8 +53,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_4"
-        android:onClick="onNumberClick"/>
+        android:text="@string/symbol_4"/>
 
     <Button
         android:id="@+id/button6"
@@ -67,8 +63,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_5"
-        android:onClick="onNumberClick"/>
+        android:text="@string/symbol_5"/>
 
     <Button
         android:id="@+id/button7"
@@ -78,8 +73,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_6"
-        android:onClick="onNumberClick"/>
+        android:text="@string/symbol_6"/>
 
     <Button
         android:id="@+id/button8"
@@ -89,8 +83,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_7"
-        android:onClick="onNumberClick" />
+        android:text="@string/symbol_7" />
 
     <Button
         android:id="@+id/button9"
@@ -100,8 +93,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_8"
-        android:onClick="onNumberClick"/>
+        android:text="@string/symbol_8"/>
 
     <Button
         android:id="@+id/button10"
@@ -111,8 +103,7 @@
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
         android:gravity="center"
-        android:text="@string/symbol_9"
-        android:onClick="onNumberClick" />
+        android:text="@string/symbol_9"/>
 
     <Button
         android:id="@+id/button11"
@@ -141,8 +132,7 @@
         grid:layout_columnWeight="1"
         grid:layout_rowWeight="1"
         grid:layout_gravity="fill_horizontal"
-        android:gravity="center"
-        android:text="@string/symbol_equal" />
+        android:gravity="center" />
 
     <Button
         android:id="@+id/button14"
@@ -152,8 +142,7 @@
         grid:layout_columnWeight="1"
         grid:layout_gravity="fill_horizontal"
         grid:layout_row="3"
-        grid:layout_rowWeight="1"
-        android:onClick="onNumberClick"/>
+        grid:layout_rowWeight="1"/>
 
     <Button
         android:id="@+id/button15"
@@ -164,12 +153,12 @@
         grid:layout_gravity="fill"
         grid:layout_columnSpan="2"
         grid:layout_row="3"
-        grid:layout_rowWeight="1"
-        android:onClick="onNumberClick" />
+        grid:layout_rowWeight="1"/>
 
     <Button
         android:id="@+id/button16"
         android:gravity="center"
+        android:text="="
         grid:layout_column="3"
         grid:layout_columnWeight="1"
         grid:layout_gravity="fill_horizontal"

@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply from: '../git.gradle'
+def tag = getLastTag()
+def patch = getPatch()
 
 android {
     compileSdkVersion 30
@@ -20,6 +23,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "payment"
+    productFlavors {
+        free {
+            dimension "payment"
+            applicationIdSuffix ".free"
+        }
+        paid {
+            dimension "payment"
+            applicationIdSuffix ".paid"
         }
     }
 }

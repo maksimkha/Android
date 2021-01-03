@@ -26,22 +26,15 @@
         <item>Сантиметр</item>
         <item>Дециметр</item>
         <item>Метр</item>
-        <item>Километр</item>
-        <item>Миля</item>
-        <item>Морской узел</item>
     </string-array>
     <string-array name="time_array">
         <item>Секунда</item>
         <item>Минута</item>
         <item>Час</item>
-        <item>День</item>
     </string-array>
     <string-array name="weight_array">
         <item>Грамм</item>
         <item>Килограмм</item>
-        <item>Центнер</item>
         <item>Тонна</item>
-        <item>Пуд</item>
-        <item>Фунты</item>
     </string-array>
 </resources>

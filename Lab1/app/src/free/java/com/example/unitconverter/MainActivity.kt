@@ -1,17 +1,17 @@
 package com.example.unitconverter
 
-import android.R
-import android.app.Fragment
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 
 
-class MainActivity : AppCompatActivity() , ButtonsFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), ButtonsFragment.ButtonClicked {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val strings = when (intent.getIntExtra("choice", 0)){
             0 -> resources.getStringArray(R.array.length_array)
             1 -> resources.getStringArray(R.array.time_array)
@@ -39,14 +39,26 @@ class MainActivity : AppCompatActivity() , ButtonsFragment.OnFragmentInteraction
         spinnerBot.adapter = null
     }
 
-    override fun onFragmentInteraction(link: String?) {
-        val fragment: Fragment? = fragmentManager.findFragmentById(R.id.inputFragment)
-        if (fragment != null && fragment.isInLayout()) {
-            fragment.setText(link)
-        }
+    override fun sendChar(text: String?) {
+        val frag: ConvertFragment? = supportFragmentManager.findFragmentById(R.id.inputFragment) as ConvertFragment?
+        frag?.updateText(text)
     }
 
+    override fun clearChar() {
+        val frag: ConvertFragment? = supportFragmentManager.findFragmentById(R.id.inputFragment) as ConvertFragment?
+        frag?.clearCharText()
+    }
 
+    override fun clearAll() {
+        val frag: ConvertFragment? = supportFragmentManager.findFragmentById(R.id.inputFragment) as ConvertFragment?
+        frag?.clearText()
+    }
+
+    override fun convert() {
+        val frag: ConvertFragment? = supportFragmentManager.findFragmentById(R.id.inputFragment) as ConvertFragment?
+        val kef = intent.getIntExtra("choice", 0)
+        frag?.convert(kef)
+    }
 }
 
 
