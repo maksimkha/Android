@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Tabata timer</string>
+    <string name="menu_add">menu_add</string>
+    <string name="start">Старт</string>
+    <string name="timer_name">Название таймера</string>
+    <string name="timer_color">Выберите цвет таймера:</string>
+    <string name="phase_name">Название фазы</string>
+    <string name="sec_amount">Количество секунд</string>
+    <string name="add">Добавить</string>
+    <string name="delete_last">Удалить последний</string>
+    <string name="save">Сохранить</string>
+    <string name="text_size">Выберите размер шрифта</string>
+    <string name="lang_choose">Выберите язык приложения</string>
+    <string name="theme_choose">Выберите тему приложения</string>
+    <string name="clear_data">Удалить всю информацию</string>
+    <string-array name="colors">
+        <item>Синий</item>
+        <item>Красный</item>
+        <item>Зеленый</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Русский</item>
+        <item>Английский</item>
+    </string-array>
+    <string-array name="themes">
+        <item>Дневная</item>
+        <item>Ночная</item>
+    </string-array>
+    <string-array name="font_size">
+        <item>Маленький</item>
+        <item>Средний</item>
+        <item>Большой</item>
+    </string-array>
+</resources>

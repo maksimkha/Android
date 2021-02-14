@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tabata timer</string>
+    <string name="menu_add">menu_add</string>
+    <string name="start">Start</string>
+    <string name="timer_name">Timer name</string>
+    <string name="timer_color">Choose timer color:</string>
+    <string name="phase_name">Phase name</string>
+    <string name="sec_amount">Sec amount</string>
+    <string name="add">Add</string>
+    <string name="delete_last">Delete last</string>
+    <string name="save">Save</string>
+    <string name="text_size">Choose font size</string>
+    <string name="lang_choose">Choose app language</string>
+    <string name="theme_choose">Choose app theme</string>
+    <string name="clear_data">Clear app data</string>
+    <string-array name="colors">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Russian</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="themes">
+        <item>Day</item>
+        <item>Night</item>
+    </string-array>
+    <string-array name="font_size">
+        <item>Small</item>
+        <item>Average</item>
+        <item>Big</item>
+    </string-array>
+</resources>
