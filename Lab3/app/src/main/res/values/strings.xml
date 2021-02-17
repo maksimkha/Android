@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Battleship</string>
+    <string-array name="avatars">
+        <item>Custom</item>
+        <item>Bunny</item>
+        <item>Ghoul</item>
+        <item>Wolf</item>
+        <item>Pikachu</item>
+    </string-array>
+</resources>
