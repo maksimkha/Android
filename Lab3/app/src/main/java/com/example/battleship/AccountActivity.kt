@@ -18,6 +18,8 @@ import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
+import com.squareup.picasso.Picasso
+import fr.tkeunebr.gravatar.Gravatar
 
 
 class AccountActivity : AppCompatActivity() {
@@ -36,14 +38,19 @@ class AccountActivity : AppCompatActivity() {
         Log.i("avatarId", avatarId.toString())
         var listView = findViewById<ListView>(R.id.list)
         adapter = ArrayAdapter(
-            this, android.R.layout.simple_spinner_item, listItems)
+            this, android.R.layout.simple_spinner_item, listItems
+        )
         listView.adapter = adapter
         var ref = database!!.getReference("custom_users/${auth.currentUser?.uid}/games")
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-               for (child in dataSnapshot.children){
-                   listItems.add("Game id = ${child.key}, result =  ${child.child("result").getValue<String>()}" )
-               }
+                for (child in dataSnapshot.children) {
+                    listItems.add(
+                        "Game id = ${child.key}, result =  ${
+                            child.child("result").getValue<String>()
+                        }"
+                    )
+                }
                 adapter!!.notifyDataSetChanged()
             }
 
@@ -75,21 +82,35 @@ class AccountActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                if (position == iCurrentSelection)
-                    return
                 Log.i("item", position.toString())
-                finalRef = if (position != 0){
-                    storageRef.child("avatar$position.jpg")
-                } else{
-                    storageRef.child("custom.jpg")
-                }
-                GlideApp.with(applicationContext)
-                        .load(finalRef)
-                        .into(imgField);
+                when (position) {
+                    iCurrentSelection -> return
+                    5 -> {
+                        Log.i("gravatar", "loading gravatar")
+                        val gravatarUrl: String = Gravatar.init().with(currentUser?.email).defaultImage("https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg").size(100).build();
+                        Picasso.with(applicationContext)
+                            .load(gravatarUrl)
+                            .into(imgField);
+                        var curUsUID = currentUser?.uid
+                        val avatarIdRef = database!!.getReference("custom_users/$curUsUID/avatarId")
+                        avatarIdRef.setValue(position)
+                    }
+                    else -> {
+                        Log.i("avatar", "loading from db")
+                        finalRef = if (position != 0) {
+                            storageRef.child("avatar$position.jpg")
+                        } else {
+                            storageRef.child("custom.jpg")
+                        }
+                        GlideApp.with(applicationContext)
+                            .load(finalRef)
+                            .into(imgField);
 
-                var curUsUID = currentUser?.uid
-                val avatarIdRef = database!!.getReference("custom_users/$curUsUID/avatarId")
-                avatarIdRef.setValue(position)
+                        var curUsUID = currentUser?.uid
+                        val avatarIdRef = database!!.getReference("custom_users/$curUsUID/avatarId")
+                        avatarIdRef.setValue(position)
+                    }
+                }
             }
 
         }
@@ -119,12 +140,25 @@ class AccountActivity : AppCompatActivity() {
         })
 
         Log.i("on create avatar id", avatarId.toString())
-        finalRef = when (avatarId){
-            0.0.toLong() -> storageRef.child("custom.jpg")
-            else -> storageRef.child("avatar$avatarId.jpg")
+        when (avatarId){
+            0.0.toLong() -> {
+                finalRef = storageRef.child("custom.jpg")
+                GlideApp.with(this)
+                    .load(finalRef)
+                    .into(imgField);
+            }
+            5.0.toLong() ->{
+                val gravatarUrl: String = Gravatar.init().with(currentUser?.email).defaultImage("https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg").size(100).build();
+                Picasso.with(applicationContext)
+                    .load(gravatarUrl)
+                    .into(imgField);
+            }
+            else -> {
+                finalRef = storageRef.child("avatar$avatarId.jpg")
+                GlideApp.with(this)
+                    .load(finalRef)
+                    .into(imgField);
+            }
         }
-        GlideApp.with(this)
-                .load(finalRef)
-                .into(imgField);
     }
 }
