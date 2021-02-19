@@ -1,0 +1,16 @@
+com/example/battleship/GlideRequests.java
+ com.example.battleship.GlideRequests
+com/example/battleship/GlideRequest.java
+ com.example.battleship.GlideRequest
+com/example/battleship/MyAppGlideModule.java
+ com.example.battleship.MyAppGlideModule
+com/example/battleship/GlideApp.java
+ com.example.battleship.GlideApp
+com/example/battleship/GlideOptions.java
+ com.example.battleship.GlideOptions
+com/example/battleship/BuildConfig.java
+ com.example.battleship.BuildConfig
+com/bumptech/glide/GeneratedRequestManagerFactory.java
+ com.bumptech.glide.GeneratedRequestManagerFactory
+com/bumptech/glide/GeneratedAppGlideModuleImpl.java
+ com.bumptech.glide.GeneratedAppGlideModuleImpl

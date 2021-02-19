@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">100598149159-a6rkhu4lb4hq64eqaq2heqn4e002mutq.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">100598149159</string>
+    <string name="google_api_key" translatable="false">AIzaSyBWN9SrS0kDfk0hB4OvJCq0Zl7SaHXg1-I</string>
+    <string name="google_app_id" translatable="false">1:100598149159:android:cabf9f337a928ab6791e02</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWN9SrS0kDfk0hB4OvJCq0Zl7SaHXg1-I</string>
+    <string name="google_storage_bucket" translatable="false">battleship-9aa33.appspot.com</string>
+    <string name="project_id" translatable="false">battleship-9aa33</string>
+</resources>
