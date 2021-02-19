@@ -148,7 +148,7 @@ class AccountActivity : AppCompatActivity() {
                     .into(imgField);
             }
             5.0.toLong() ->{
-                val gravatarUrl: String = Gravatar.init().with(currentUser?.email).defaultImage("https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg").size(100).build();
+                val gravatarUrl: String = Gravatar.init().with(currentUser?.email).size(100).build();
                 Picasso.with(applicationContext)
                     .load(gravatarUrl)
                     .into(imgField);

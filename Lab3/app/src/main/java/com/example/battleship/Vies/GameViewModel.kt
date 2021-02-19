@@ -1,4 +1,4 @@
-package com.example.battleship
+package com.example.battleship.Vies
 
 import android.app.Activity
 import android.graphics.Color
@@ -11,8 +11,6 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.StorageReference
 
 class GameViewModel  : ViewModel() {
     private var database: FirebaseDatabase? = null
