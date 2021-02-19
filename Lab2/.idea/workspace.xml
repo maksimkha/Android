@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96c6e13-c512-4b9a-9093-83ee2255046c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab3" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.756306306">
@@ -55,18 +58,19 @@
     <key name="android.template.-568799562">
       <recent name="com.example.tabatatimer" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\work\android\Lab2\app\src\main\res\values-ru" />
-    </key>
-    <key name="android.template.-792186846">
-      <recent name="com.example.tabatatimer" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\work\android\Lab2\app\src\main\res\raw" />
       <recent name="D:\work\android\Lab2\app\src\main\res\values-en" />
       <recent name="D:\work\android\Lab2\app\src\main\res\mipmap-xhdpi" />
       <recent name="D:\work\android\Lab2\app\src\main\res\mipmap-xxhdpi" />
       <recent name="D:\work\android\Lab2\app\src\main\res\mipmap-xxxhdpi" />
+    </key>
+    <key name="android.template.-792186846">
+      <recent name="com.example.tabatatimer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\android\Lab2" />
+      <recent name="D:\work\android\Lab2\app\src\main\res\values-ru" />
     </key>
   </component>
   <component name="RunManager">
@@ -177,26 +181,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="107" y="92" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612106702901" />
-    <state x="267" y="278" key="FileChooserDialogImpl" timestamp="1613270302122">
+    <state x="267" y="278" key="FileChooserDialogImpl" timestamp="1613738767868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="267" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613270302122" />
-    <state width="927" height="287" key="GridCell.Tab.0.bottom" timestamp="1613270690882">
+    <state x="267" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613738767868" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1613738885042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="927" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613270690882" />
-    <state width="927" height="287" key="GridCell.Tab.0.center" timestamp="1613270690881">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613738885042" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1613738885041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="927" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613270690881" />
-    <state width="927" height="287" key="GridCell.Tab.0.left" timestamp="1613270690881">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613738885041" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1613738885041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="927" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613270690881" />
-    <state width="927" height="287" key="GridCell.Tab.0.right" timestamp="1613270690881">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613738885041" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1613738885041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="927" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613270690881" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613738885041" />
     <state width="511" height="448" key="SwitcherDM" timestamp="1611489609417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
