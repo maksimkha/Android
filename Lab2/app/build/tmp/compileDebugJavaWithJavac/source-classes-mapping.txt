@@ -1,0 +1,2 @@
+com/example/tabatatimer/BuildConfig.java
+ com.example.tabatatimer.BuildConfig
