@@ -46,20 +46,20 @@ class GameStartActivity : AppCompatActivity() {
         var turn = database!!.getReference("games/$gameID/gameState")
         var endRef = database!!.getReference("games/$gameID/gameState/$antiRole")
         gameStateModel = ViewModelProviders.of(this)[GameViewModel::class.java]
-        gameStateModel!!.GameViewModelConstr(gameID, role.toString(), antiRole.toString(), table, enemy, startBtn)
+        gameStateModel!!.GameViewModelConstr(gameID, role.toString(), antiRole.toString(), database!!, auth)
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.child("guest").exists() && dataSnapshot.child("host").exists()) {
                     gameStatus.setValue("playing")
-                    endRef.addValueEventListener(gameStateModel!!.endRefListener)
+                    gameStateModel!!.setEndRefListener(endRef, enemy, startBtn)
                 }
             }
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.i("trying to read info", "error with database reading")
             }
         })
-        gameStatus.addValueEventListener(gameStateModel!!.gameStateListener)
-        turn.addValueEventListener(gameStateModel!!.turnListener)
+        gameStateModel!!.setGameStatListener(endRef, enemy, startBtn)
+        gameStateModel!!.setTurnListener(endRef, enemy, startBtn)
         for (i: Int in 0..9){
             var row = TableRow(this)
             row.layoutParams = TableLayout.LayoutParams(
@@ -110,14 +110,14 @@ class GameStartActivity : AppCompatActivity() {
                 btn.id = i*10 + j
                 row.addView(btn, j)
                 btn.setOnClickListener(){
-                    gameStateModel!!.setBtnListener(btn, j, i)
+                    gameStateModel!!.setBtnListener(table, startBtn, j, i)
                 }
             }
             enemy.addView(row, i)
         }
         enemy.visibility = INVISIBLE
         startBtn.setOnClickListener {
-            gameStateModel!!.setStartBtn()
+            gameStateModel!!.setStartBtn(table, enemy, startBtn)
         }
     }
 
