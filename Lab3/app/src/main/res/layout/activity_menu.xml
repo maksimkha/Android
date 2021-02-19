@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09CFE8"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="309dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="202dp" />
+
+        <Button
+            android:id="@+id/buttonCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create game" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="83dp" />
+
+        <Button
+            android:id="@+id/buttonFind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find game" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="83dp" />
+
+        <Button
+            android:id="@+id/buttonAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Account" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
