@@ -72,6 +72,7 @@ class TimerService : Service() {
         super.onDestroy()
         for (item in timerArray)
             item?.cancel()
+        mMediaPlayer!!.release()
     }
 }
 

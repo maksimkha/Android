@@ -106,12 +106,14 @@ class TimerActivity : AppCompatActivity() {
             phasesPassed = 0
             timePassed = 0
             nameField.text = timer!!.name.toString()
+            stopService(Intent(this, TimerService::class.java))
         })
         var timerPause = findViewById<View>(R.id.timerPause) as Button
         timerPause.setOnClickListener(View.OnClickListener {
             isPaused = true
             for (item in timerArray)
                 item?.cancel()
+            stopService(Intent(this, TimerService::class.java))
         })
         var timerSkip = findViewById<View>(R.id.timerSkip) as Button
         timerSkip.setOnClickListener(View.OnClickListener {
@@ -119,8 +121,10 @@ class TimerActivity : AppCompatActivity() {
                 item?.cancel()
             phasesPassed += 1
             timePassed = 0
+            stopService(Intent(this, TimerService::class.java))
             if (phasesPassed < timer!!.phases.size) {
                 isPaused = false
+                passService()
                 var timerArraySize: Int = timer!!.phases.size - phasesPassed
                 timerArray = arrayOfNulls<CountDownTimer>(timerArraySize)
                 var i = phasesPassed
