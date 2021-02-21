@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
@@ -23,13 +24,11 @@ class TimerActivity : AppCompatActivity() {
     var phasesPassed: Int = 0
     var timePassed: Int = 0
     var time : CountDownTimer? = null
-    var mMediaPlayer: MediaPlayer? = null
     var timerArray: Array<CountDownTimer?> = arrayOfNulls(1)
     var isPaused: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
-        mMediaPlayer = MediaPlayer.create(this, R.raw.sound)
         val nameField = findViewById<View>(R.id.timerName) as TextView
         val timeField = findViewById<View>(R.id.timerTime) as TextView
         timer = intent?.getSerializableExtra("timer") as Sequence
@@ -60,6 +59,7 @@ class TimerActivity : AppCompatActivity() {
         timerStart.setOnClickListener(View.OnClickListener {
             if (isPaused) {
                 isPaused = false
+                passService()
                 var timerArraySize: Int = timer!!.phases.size - phasesPassed
                 timerArray = arrayOfNulls<CountDownTimer>(timerArraySize)
                 var i = phasesPassed
@@ -79,8 +79,7 @@ class TimerActivity : AppCompatActivity() {
 
                         override fun onFinish() {
                             timePassed = 0
-                            mMediaPlayer!!.start()
-                            Log.d("finished", "$counter timer finished")
+                            Log.d("finished from activity", "$counter timer finished")
                             if (counter + 1 < timerArraySize) {
                                 phasesPassed += 1
                                 nameField.text = timer!!.phases[counter + 1].name
@@ -116,7 +115,6 @@ class TimerActivity : AppCompatActivity() {
         })
         var timerSkip = findViewById<View>(R.id.timerSkip) as Button
         timerSkip.setOnClickListener(View.OnClickListener {
-            mMediaPlayer!!.start()
             for (item in timerArray)
                 item?.cancel()
             phasesPassed += 1
@@ -142,7 +140,6 @@ class TimerActivity : AppCompatActivity() {
 
                         override fun onFinish() {
                             timePassed = 0
-                            mMediaPlayer!!.start()
                             Log.d("finished", "$counter timer finished")
                             if (counter + 1 < timerArraySize) {
                                 phasesPassed += 1
@@ -171,30 +168,20 @@ class TimerActivity : AppCompatActivity() {
         })
     }
 
-    private val br: BroadcastReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            TODO("on pause = start service, on resume - get service result")
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        var data = Intent(this, TimerService::class.java)
-        /*data.putExtra("timer", timer)
-        data.putExtra("timePassed", timePassed)
-        data.putExtra("phasesPassed", phasesPassed)
-        data.putExtra("isPaused", isPaused)*/
-        startService(data)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        stopService(Intent(this, TimerService::class.java))
-    }
-
     override fun onBackPressed() {
+        super.onBackPressed()
         for (item in timerArray)
             item?.cancel()
-        super.onBackPressed()
+        stopService(Intent(this, TimerService::class.java))
+        finish()
+    }
+
+    fun passService(){
+        var data = Intent(this, TimerService::class.java)
+        data.putExtra("timer", timer)
+        data.putExtra("timePassed", timePassed)
+        data.putExtra("phasesPassed", phasesPassed)
+        data.putExtra("isPaused", isPaused)
+        startService(data)
     }
 }
